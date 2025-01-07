@@ -6,7 +6,7 @@
     <title>فروشگاه آیچیکو</title>
     <link rel="stylesheet" href="styles.css">
     <style>
-        body {
+        body{
             font-family: 'Vazirmatn', sans-serif;
             background: linear-gradient(135deg, #00fff2, #fad0c4);
             color: #555;
@@ -42,6 +42,7 @@
         .category-section {
             margin-bottom: 4rem;
             text-align: center;
+            padding: 1rem;
         }
         .category-banner {
             width: 100%;
@@ -58,7 +59,7 @@
         }
         .product-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 1.5rem;
             padding: 0 1rem;
         }
@@ -75,6 +76,7 @@
         }
         .product-card img {
             width: 100%;
+            height: auto;
             border-bottom: 2px solid #ff6f91;
         }
         .product-card h3 {
@@ -108,15 +110,18 @@
             }
             nav ul {
                 flex-direction: column;
+                padding: 0;
+                margin: 0;
             }
             nav ul li {
                 margin: 0.5rem 0;
             }
-            .category-section h2 {
-                font-size: 1.5rem;
+            .category-section {
+                padding: 0.5rem;
             }
             .category-banner {
                 max-width: 100%;
+                margin-bottom: 1rem;
             }
             .product-grid {
                 grid-template-columns: 1fr;
@@ -131,15 +136,6 @@
             .btn {
                 font-size: 0.9rem;
                 padding: 0.6rem 1rem;
-            }
-            .product-card img {
-            width: 100%; 
-            height: auto; 
-            }
-            .category-banner img {
-            width: 100%;
-            height: auto;
-            object-fit: cover;
             }
         }
     </style>
