@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>فروشگاه آیچیکو</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: 'Vazirmatn', sans-serif;
+            background: linear-gradient(135deg, #00fff2, #fad0c4);
+            color: #555;
+            margin: 0;
+        }
+        header {
+            background: #ffe5ec;
+            padding: 1rem 0;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        header h1 {
+            color: #ff6f91;
+            text-align: center;
+        }
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            padding: 0;
+        }
+        nav ul li {
+            margin: 0 1rem;
+        }
+        nav ul li a {
+            text-decoration: none;
+            color: #ff6f91;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+        nav ul li a:hover {
+            color: #ff3c7a;
+        }
+        .category-section {
+            margin-bottom: 4rem;
+            text-align: center;
+        }
+        .category-banner {
+            width: 100%;
+            max-width: 600px;
+            margin: 0 auto 2rem;
+            cursor: pointer;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+        .category-banner img {
+            width: 100%;
+            display: block;
+        }
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            padding: 0 1rem;
+        }
+        .product-card {
+            background: #fff;
+            border: 1px solid #ff6f91;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+        .product-card:hover {
+            transform: scale(1.05);
+        }
+        .product-card img {
+            width: 100%;
+            border-bottom: 2px solid #ff6f91;
+        }
+        .product-card h3 {
+            color: #ff6f91;
+            margin: 1rem 0 0.5rem;
+        }
+        .btn {
+            display: block;
+            margin: 1rem auto;
+            padding: 0.8rem 1.5rem;
+            background: #ff6f91;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            text-align: center;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+        .btn:hover {
+            background: #ff3c7a;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            header {
+                padding: 0.5rem 0;
+            }
+            header h1 {
+                font-size: 1.5rem;
+            }
+            nav ul {
+                flex-direction: column;
+            }
+            nav ul li {
+                margin: 0.5rem 0;
+            }
+            .category-section h2 {
+                font-size: 1.5rem;
+            }
+            .category-banner {
+                max-width: 100%;
+            }
+            .product-grid {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+            .product-card {
+                padding: 0.5rem;
+            }
+            .product-card h3 {
+                font-size: 1rem;
+            }
+            .btn {
+                font-size: 0.9rem;
+                padding: 0.6rem 1rem;
+            }
+            .product-card img {
+            width: 100%; 
+            height: auto; 
+            }
+            .category-banner img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+            }
+        }
+    </style>
+    </head>
+<body>
+    <header>
+        <h1>فروشگاه آیچیکو</h1>
+        <nav>
+            <ul>
+                <li><a href="#">خانه</a></li>
+                <li><a href="#accessories">اکسسوری</a></li>
+                <li><a href="#bags">کیف</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="products">
+            <h2>محصولات ما</h2>
+            <div class="product-grid">
+                <div class="product-card">
+                    <img src="images/product1.jpg" alt="محصول 1">
+                    <h3>محصول 1</h3>
+                    <button class="btn" onclick="window.location.href='1.html'">مشاهده جزئیات</button>
+                </div>
+                <div class="product-card">
+                    <img src="images/product2.jpg" alt="محصول 2">
+                    <h3>محصول 2</h3>
+                    <button class="btn" onclick="window.location.href='product-details.html?id=2'">مشاهده جزئیات</button>
+                </div>
+                <div class="product-card">
+                    <img src="images/product3.jpg" alt="محصول 3">
+                    <h3>محصول 3</h3>
+                    <button class="btn" onclick="window.location.href='product-details.html?id=3'">مشاهده جزئیات</button>
+                </div>
+                <div class="product-card">
+                    <img src="images/product4.jpg" alt="محصول 4">
+                    <h3>محصول 4</h3>
+                    <button class="btn" onclick="window.location.href='product-details.html?id=4'">مشاهده جزئیات</button>
+                </div>
+                <div class="product-card">
+                    <img src="images/product5.jpg" alt="محصول 5">
+                    <h3>محصول 5</h3>
+                    <button class="btn" onclick="window.location.href='product-details.html?id=5'">مشاهده جزئیات</button>
+                </div>
+                <div class="product-card">
+                    <img src="images/product6.jpg" alt="محصول 6">
+                    <h3>محصول 6</h3>
+                    <button class="btn" onclick="window.location.href='product-details.html?id=6'">مشاهده جزئیات</button>
+                </div>
+                <div class="product-card">
+                    <img src="images/product7.jpg" alt="محصول 7">
+                    <h3>محصول 7</h3>
+                    <button class="btn" onclick="window.location.href='product-details.html?id=7'">مشاهده جزئیات</button>
+                </div>
+                <div class="product-card">
+                    <img src="images/product8.jpg" alt="محصول ۸">
+                    <h3>محصول ۸</h3>
+                    <button class="btn" onclick="window.location.href='product-details.html?id=8'">مشاهده جزئیات</button>
+                </div>
+                <div class="product-card">
+                    <img src="images/product8.jpg" alt="محصول 9">
+                    <h3>محصول 9</h3>
+                    <button class="btn" onclick="window.location.href='product-details.html?id=8'">مشاهده جزئیات</button>
+                </div>
+                <div class="product-card">
+                    <img src="images/product8.jpg" alt="محصول 10">
+                    <h3>محصول 10</h3>
+                    <button class="btn" onclick="window.location.href='product-details.html?id=8'">مشاهده جزئیات</button>
+                </div>
+                <div class="product-card">
+                    <img src="images/product8.jpg" alt="محصول 11">
+                    <h3>محصول 11</h3>
+                    <button class="btn" onclick="window.location.href='product-details.html?id=8'">مشاهده جزئیات</button>
+                </div>
+                <div class="product-card">
+                    <img src="images/product8.jpg" alt="محصول 12">
+                    <h3>محصول 12</h3>
+                    <button class="btn" onclick="window.location.href='product-details.html?id=8'">مشاهده جزئیات</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <main>
+        <section id="accessories" class="category-section">
+            <h2>اکسسوری</h2>
+            <div class="category-banner" onclick="window.location.href='accessories.html'">
+                <img src="images/accessories-banner.jpg" alt="بنر اکسسوری">
+            </div>
+            <div class="product-grid">
+                <div class="product-card">
+                    <img src="images/accessory1.jpg" alt="اکسسوری 1">
+                    <h3>اکسسوری 1</h3>
+                    <button class="btn" onclick="window.location.href='product-details.html?id=1'">مشاهده جزئیات</button>
+                </div>
+                <div class="product-card">
+                    <img src="images/accessory2.jpg" alt="اکسسوری 2">
+                    <h3>اکسسوری 2</h3>
+                    <button class="btn" onclick="window.location.href='product-details.html?id=2'">مشاهده جزئیات</button>
+                </div>
+                <div class="product-card">
+                    <img src="images/accessory3.jpg" alt="اکسسوری 3">
+                    <h3>اکسسوری 3</h3>
+                    <button class="btn" onclick="window.location.href='product-details.html?id=3'">مشاهده جزئیات</button>
+                </div>
+                <div class="product-card">
+                    <img src="images/accessory4.jpg" alt="اکسسوری 4">
+                    <h3>اکسسوری 4</h3>
+                    <button class="btn" onclick="window.location.href='product-details.html?id=4'">مشاهده جزئیات</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="bags" class="category-section">
+            <h2>بگ</h2>
+            <div class="category-banner" onclick="window.location.href='bags.html'">
+                <img src="images/bags-banner.jpg" alt="بنر بگ">
+            </div>
+            <div class="product-grid">
+                <div class="product-card">
+                    <img src="images/bag1.jpg" alt="بگ 1">
+                    <h3>بگ 1</h3>
+                    <button class="btn" onclick="window.location.href='product-details.html?id=5'">مشاهده جزئیات</button>
+                </div>
+                <div class="product-card">
+                    <img src="images/bag2.jpg" alt="بگ 2">
+                    <h3>بگ 2</h3>
+                    <button class="btn" onclick="window.location.href='product-details.html?id=6'">مشاهده جزئیات</button>
+                </div>
+                <div class="product-card">
+                    <img src="images/bag3.jpg" alt="بگ 3">
+                    <h3>بگ 3</h3>
+                    <button class="btn" onclick="window.location.href='product-details.html?id=7'">مشاهده جزئیات</button>
+                </div>
+                <div class="product-card">
+                    <img src="images/bag4.jpg" alt="بگ 4">
+                    <h3>بگ 4</h3>
+                    <button class="btn" onclick="window.location.href='product-details.html?id=8'">مشاهده جزئیات</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2025 فروشگاه آیچیکو - تمامی حقوق محفوظ است.</p>
+    </footer>
+</body>
+</html>
