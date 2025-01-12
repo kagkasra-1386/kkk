@@ -27,30 +27,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // Scroll-triggered category sections
-    const categories = [
-        {
-            name: 'اکسسوری',
-            link: 'accessories.html',
-            products: [
-                { id: 1, name: 'اکسسوری ۱', image: 'images/accessory1.jpg' },
-                { id: 2, name: 'اکسسوری ۲', image: 'images/accessory2.jpg' },
-                { id: 3, name: 'اکسسوری ۳', image: 'images/accessory3.jpg' },
-                { id: 4, name: 'اکسسوری ۴', image: 'images/accessory4.jpg' }
-            ]
-        },
-        {
-            name: 'کیف',
-            link: 'bags.html',
-            products: [
-                { id: 5, name: 'کیف ۱', image: 'images/bag1.jpg' },
-                { id: 6, name: 'کیف ۲', image: 'images/bag2.jpg' },
-                { id: 7, name: 'کیف ۳', image: 'images/bag3.jpg' },
-                { id: 8, name: 'کیف ۴', image: 'images/bag4.jpg' }
-            ]
-        }
-    ];
-
     const mainContainer = document.querySelector('main');
 
     categories.forEach(category => {
@@ -98,4 +74,174 @@ document.addEventListener('DOMContentLoaded', () => {
         section.appendChild(moreButton);
         mainContainer.appendChild(section);
     });
+
+    // Login and Signup Forms Functionality
+    const authForms = document.querySelector('.auth-forms');
+    const loginForm = document.getElementById('login-form');
+    const signupForm = document.getElementById('signup-form');
+
+    authForms.querySelector('.login-btn').addEventListener('click', () => {
+        loginForm.classList.remove('hidden');
+        signupForm.classList.add('hidden');
+    });
+
+    authForms.querySelector('.signup-btn').addEventListener('click', () => {
+        signupForm.classList.remove('hidden');
+        loginForm.classList.add('hidden');
+    });
+
+    // Login Form Submission
+    loginForm.addEventListener('submit', (event) => {
+        event.preventDefault();
+        const username = event.target.querySelector('input[name="username"]').value.trim();
+        const password = event.target.querySelector('input[name="password"]').value.trim();
+
+        if (username && password) {
+            alert(`خوش آمدید، ${username}`);
+            loginForm.reset();
+            loginForm.classList.add('hidden');
+        } else {
+            alert('لطفاً همه فیلدها را پر کنید.');
+        }
+    });
+
+    // Signup Form Submission
+    signupForm.addEventListener('submit', (event) => {
+        event.preventDefault();
+        const username = event.target.querySelector('input[name="username"]').value.trim();
+        const email = event.target.querySelector('input[name="email"]').value.trim();
+        const password = event.target.querySelector('input[name="password"]').value.trim();
+
+        if (username && email && password) {
+            alert(`ثبت‌نام موفقیت‌آمیز بود، ${username}`);
+            signupForm.reset();
+            signupForm.classList.add('hidden');
+        } else {
+            alert('لطفاً همه فیلدها را پر کنید.');
+        }
+    });
+});
+
+
+// Hamburger Menu Functionality
+const hamburgerIcon = document.getElementById('hamburger-icon');
+const menuContent = document.getElementById('menu-content');
+
+hamburgerIcon.addEventListener('click', () => {
+    // Toggle visibility
+    menuContent.style.display = menuContent.style.display === 'block' ? 'none' : 'block';
+});
+
+    // Dynamically populate menu items if hidden class is removed
+    if (!menuContent.classList.contains('hidden')) {
+        menuContent.innerHTML = `
+            <ul>
+                <li><a href="#">خانه</a></li>
+                <li><a href="#about">درباره ما</a></li>
+                <li><a href="#contact">ارتباط با ما</a></li>
+                <li>
+                    محصولات
+                    <ul class="submenu">
+                        <li><a href="accessories.html">اکسسوری</a></li>
+                        <li><a href="bags.html">بگ</a></li>
+                    </ul>
+                </li>
+                <li><a href="cart.html">سبد خرید</a></li>
+            </ul>
+        `;
+    }
+
+// Close menu when clicking outside
+document.addEventListener('click', (event) => {
+    if (!menuContent.contains(event.target) && !hamburgerIcon.contains(event.target)) {
+        menuContent.classList.add('hidden');
+    }
+});
+
+const searchInput = document.getElementById('search-input');
+const productGrid = document.querySelector('.product-grid');
+
+// ذخیره محصولات اصلی
+const allProducts = Array.from(productGrid.children);
+
+// جستجوی لحظه‌ای
+const performSearch = (query) => {
+    productGrid.innerHTML = ''; // پاک کردن محتوا
+
+    if (query) {
+        // فیلتر کردن محصولات
+        const results = allProducts.filter((card) => {
+            const productName = card.querySelector('h3').textContent;
+            return productName.includes(query);
+        });
+
+        if (results.length > 0) {
+            results.forEach((result) => productGrid.appendChild(result));
+        } else {
+            productGrid.innerHTML = '<p>محصولی یافت نشد</p>';
+        }
+    } else {
+        // بازگرداندن لیست کامل محصولات
+        allProducts.forEach((product) => productGrid.appendChild(product));
+    }
+};
+
+// رویداد لحظه‌ای جستجو
+searchInput.addEventListener('input', (event) => {
+    const query = event.target.value.trim();
+    performSearch(query);
+});
+
+// Listen to input events for real-time search
+searchInput.addEventListener('input', (event) => {
+    const query = event.target.value.trim();
+    performSearch(query);
+});
+
+searchInput.addEventListener('keypress', (event) => {
+    if (event.key === 'Enter') {
+        searchButton.click();
+    }
+});
+
+// Login and Signup Redirection
+const loginButton = document.getElementById('login-btn');
+const signupButton = document.getElementById('signup-btn');
+
+loginButton.addEventListener('click', () => {
+    window.location.href = 'login.html';
+});
+
+signupButton.addEventListener('click', () => {
+    window.location.href = 'signup.html';
+});
+
+// Signup Form Submission
+document.getElementById('signup-form')?.addEventListener('submit', async (event) => {
+    event.preventDefault();
+    const data = new FormData(event.target);
+    const response = await fetch('/signup', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(Object.fromEntries(data)),
+    });
+    const result = await response.json();
+    alert(result.message);
+});
+
+// Login Form Submission
+document.getElementById('login-form')?.addEventListener('submit', async (event) => {
+    event.preventDefault();
+    const data = new FormData(event.target);
+    const response = await fetch('/login', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(Object.fromEntries(data)),
+    });
+    const result = await response.json();
+    if (response.ok) {
+        alert(result.message);
+    } else {
+        alert(result.message);
+    }
 });

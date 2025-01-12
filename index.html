@@ -5,141 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>فروشگاه آیچیکو</title>
     <link rel="stylesheet" href="styles.css">
-    <style>
-        body{
-            font-family: 'Vazirmatn', sans-serif;
-            background: linear-gradient(135deg, #00fff2, #fad0c4);
-            color: #555;
-            margin: 0;
-        }
-        header {
-            background: #ffe5ec;
-            padding: 1rem 0;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-        }
-        header h1 {
-            color: #ff6f91;
-            text-align: center;
-        }
-        nav ul {
-            display: flex;
-            justify-content: center;
-            list-style: none;
-            padding: 0;
-        }
-        nav ul li {
-            margin: 0 1rem;
-        }
-        nav ul li a {
-            text-decoration: none;
-            color: #ff6f91;
-            font-weight: bold;
-            transition: color 0.3s ease;
-        }
-        nav ul li a:hover {
-            color: #ff3c7a;
-        }
-        .category-section {
-            margin-bottom: 4rem;
-            text-align: center;
-            padding: 1rem;
-        }
-        .category-banner {
-            width: 100%;
-            max-width: 600px;
-            margin: 0 auto 2rem;
-            cursor: pointer;
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-        }
-        .category-banner img {
-            width: 100%;
-            display: block;
-        }
-        .product-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1.5rem;
-            padding: 0 1rem;
-        }
-        .product-card {
-            background: #fff;
-            border: 1px solid #ff6f91;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            overflow: hidden;
-            transition: transform 0.3s ease;
-        }
-        .product-card:hover {
-            transform: scale(1.05);
-        }
-        .product-card img {
-            width: 100%;
-            height: auto;
-            border-bottom: 2px solid #ff6f91;
-        }
-        .product-card h3 {
-            color: #ff6f91;
-            margin: 1rem 0 0.5rem;
-        }
-        .btn {
-            display: block;
-            margin: 1rem auto;
-            padding: 0.8rem 1.5rem;
-            background: #ff6f91;
-            color: #fff;
-            border: none;
-            border-radius: 5px;
-            text-align: center;
-            font-size: 1rem;
-            cursor: pointer;
-            transition: background 0.3s ease;
-        }
-        .btn:hover {
-            background: #ff3c7a;
-        }
-
-        /* Responsive Styles */
-        @media (max-width: 768px) {
-            header {
-                padding: 0.5rem 0;
-            }
-            header h1 {
-                font-size: 1.5rem;
-            }
-            nav ul {
-                flex-direction: column;
-                padding: 0;
-                margin: 0;
-            }
-            nav ul li {
-                margin: 0.5rem 0;
-            }
-            .category-section {
-                padding: 0.5rem;
-            }
-            .category-banner {
-                max-width: 100%;
-                margin-bottom: 1rem;
-            }
-            .product-grid {
-                grid-template-columns: 1fr;
-                gap: 1rem;
-            }
-            .product-card {
-                padding: 0.5rem;
-            }
-            .product-card h3 {
-                font-size: 1rem;
-            }
-            .btn {
-                font-size: 0.9rem;
-                padding: 0.6rem 1rem;
-            }
-        }
-    </style>
-    </head>
+    <script src="script.js" defer></script>
+</head>
 <body>
     <header>
         <h1>فروشگاه آیچیکو</h1>
@@ -151,6 +18,46 @@
             </ul>
         </nav>
     </header>
+    
+    <!-- Search Bar -->
+    <div class="search-bar">
+        <input type="text" id="search-input" placeholder="جستجوی محصولات...">
+        <button id="search-btn">جستجو</button>
+    </div>
+
+    <!-- Hamburger Menu -->
+    <div class="hamburger-menu">
+        <button id="hamburger-icon">&#9776;</button>
+        <div id="menu-content" class="hidden">
+            <ul>
+                <li><a href="#">خانه</a></li>
+                <li><a href="#about">درباره ما</a></li>
+                <li><a href="#" id="contact">ارتباط با ما</a></li>
+                <li>
+                    محصولات
+                    <ul class="submenu">
+                        <li><a href="accessories.html">اکسسوری</a></li>
+                        <li><a href="bags.html">بگ</a></li>
+                    </ul>
+                </li>
+                <li><a href="cart.html">سبد خرید</a></li>
+                <li>
+                    ما را دنبال کنید
+                    <ul class="submenu">
+                        <li><a href="https://t.me/yourid">تلگرام</a></li>
+                        <li><a href="https://instagram.com/yourid">اینستاگرام</a></li>
+                        <li><a href="https://wa.me/yourid">واتساپ</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Login & Sign-up Forms -->
+    <div class="auth-forms">
+        <button id="login-btn">ورود</button>
+        <button id="signup-btn">ثبت نام</button>
+    </div>
     <main>
         <section id="products">
             <h2>محصولات ما</h2>
